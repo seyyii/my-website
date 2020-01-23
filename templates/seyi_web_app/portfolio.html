@@ -1,0 +1,92 @@
+{% extends 'seyi_web_app/base.html' %}
+{% load static %}
+<!Doctype html>
+{% block title%}
+Portfolio
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="banner_area">
+	<div class="banner_inner d-flex align-items-center">
+		<div class="container">
+			<div class="banner_content text-center">
+				<h2>Portfolio</h2>
+				<div class="page_link">
+					<a href="{% url 'index' %}">Home</a>
+					<a href="{% url 'seyi_web_app:services' %}">Services</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="ftco-section ftco-portfolio">
+	<div class="container">
+		<div class="row">
+			{% if port %}
+			{% for por in port %}
+			<div class="col-md-6 portfolio-wrap ftco-animate">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="img js-fullheight">
+							<img src="{{por.port_img.url}}" alt="" style="width: 200px; height: 150px;">
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="text">
+							<div class="px-0 pt-5">
+								<div class="desc">
+									<div class="top top-relative">
+										<span class="subheading">Logo Design {{ por.created_date }}</span>
+										<h2 class="mb-4"><a href="{{ por.port_link }}">{{ por.port_title }}</a></h2>
+									</div>
+									<div class="absolute relative">
+										<p>
+											{{ por.content }}
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			{% endif %}
+		</div>
+	</div>
+</section>
+<section class="newsletter_area">
+	<div class="container">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-lg-12">
+				<div class="subscription_box text-center">
+					<h2 class="text-uppercase text-white">Get updated</h2>
+					<p class="text-white">
+						Get updates on our new projects from anywhere in the world.
+					</p>
+					<div class="subcribe-form" id="mc_embed_signup">
+						<form method="POST" class="">
+							<div class="offset-md-4 subscription relative">
+								<p>
+									{{ sform.as_p }}
+									{% csrf_token %}
+								</p>
+							</div>
+							<div>
+								<input type='submit' class='btn btn-primary' value="Get Started">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+    <!--================End Portfolio Area =================-->
+    
+    <!--================ Start Newsletter Area =================-->
+{% endblock %}

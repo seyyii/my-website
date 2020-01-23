@@ -1,0 +1,55 @@
+{% extends 'seyi_web_app/base.html' %}
+{% load static %}
+<!Doctype html>
+{% block title%}
+Contact
+
+{% endblock %}
+
+
+{% block content %}
+    
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="contact_info">
+                        <div class="info_item">
+                            <i class="lnr lnr-home"></i>
+                            <h6>Lagos, Nigeria</h6>
+                            <p>Oregun,Ikeja</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-phone-handset"></i>
+                            <h6><a href="#">+234 809 0712174</a></h6>
+                            <p>Mon to Fri 9am to 6 pm</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-envelope"></i>
+                            <h6><a href="#">omotoshotoheeb@gmail.com</a></h6>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <form class="row contact_form" action="" method="post" id="contactForm" novalidate="novalidate">
+                        <div class="col-md-8 offset-md-4">
+                            <p>
+                                {{ form.as_p }}
+                                {% csrf_token %}
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="primary_btn">
+                                <span>Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Contact Area =================-->
+        
+ {% endblock %}

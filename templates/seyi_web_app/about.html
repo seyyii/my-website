@@ -1,0 +1,179 @@
+{% extends 'seyi_web_app/base.html' %}
+{% load static %}
+<!Doctype html>
+{% block title%}
+About
+
+{% endblock %}
+
+
+{% block content %}
+    
+   <!--================ Start About Us Area =================-->
+	<section class="about_area section_gap">
+        <div class="container">
+            <div class="row justify-content-start align-items-center">
+                <div class="col-lg-5">
+                    <div class="about_img">
+                        <img class="" src="{% static 'seyi_web_app/img/about-us.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="offset-lg-1 col-lg-5">
+                    <div class="main_title text-left">
+                        <h2>let’s <br>
+                            Introduce about <br>
+                            myself</h2>
+                        <p>
+                            Hello,i am seyi omotosho a full stack web developer and designer,
+                            who currently lives and work in lagos nigeria.
+                        </p>
+                        <p>
+                            i am very passionate about web developement and design because
+                            every company or business or person should have a personal website as it opens you or your company to the rest
+                            of the world without them having to meet you from the comfort of thier home or office.
+                        </p>
+                        <a class="primary_btn" href="#"><span>Download CV</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End About Us Area =================-->
+
+	<!--================ Srart Brand Area =================-->
+	<!-- <section class="brand_area section_gap_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo3.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo4.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo5.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo6.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo7.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo8.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="img/brands/logo9.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-lg-2 col-lg-4 col-md-6">
+                    <div class="client-info">
+                        <div class="d-flex mb-50">
+                            <span class="lage">1</span>
+                            <span class="smll">Years Experience Working</span>
+                        </div>
+                        <div class="call-now d-flex">
+                            <div>
+                                <span class="fa fa-phone"></span>
+                            </div>
+                            <div class="ml-15">
+                                <p>call us now</p>
+                                <h3>(+234)-809-971-2194</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--================ End Brand Area =================-->
+
+	<!--================ Start Testimonial Area =================-->
+    <div class="testimonial_area section_gap_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="main_title">
+                        <h2>client say about me</h2>
+                        <p>Feedbacks from clients are very important to us.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="testi_slider owl-carousel">
+                    {% if cl%}
+                    {% for cls in cl %}
+                    <div class="testi_item">
+                        <div class="row">
+                            <!-- <div class="col-lg-4">
+            						<img src="{{ cls.cl_img.url }}" alt="">
+    							</div> -->
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+    
+                                    <h4>{{ cls.cl_name }}</h4>
+                                    <p>{{ cls.cl_comment }}</p>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================ End Testimonial Area =================-->
+    
+    <!--================ Start Newsletter Area =================-->
+
+    <!--================ End Newsletter Area =================-->
+        
+   {% endblock %}

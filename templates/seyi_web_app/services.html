@@ -1,0 +1,97 @@
+{% extends 'seyi_web_app/base.html' %}
+{% load static %}
+<!Doctype html>
+{% block title%}
+Services
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>Services</h2>
+                    <div class="page_link">
+                        <a href="{% url 'index' %}">Home</a>
+                        <a href="{% url 'seyi_web_app:portfolio' %}">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+
+	<!--================ Start Features Area =================-->
+	<section class="features_area section_gap_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="main_title">
+                        <h2>service offers </h2>
+                        <p>
+                            We offer a wide range of services from Basic Design to Search Engine Optimization to Frontend and Backend Web
+                            Developement
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row feature_inner">
+                {% if srv %}
+                {% for sr in srv %}
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature_item">
+                        <img src="{{ sr.srv_img.url }}" alt="">
+                        <h4>{{ sr.srv_title }}</h4>
+                        <p>{{ sr.srv_content }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <!--================ End Features Area =================-->
+
+	<!--================ Start Testimonial Area =================-->
+	<div class="testimonial_area section_gap_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="main_title">
+                        <h2>client say about me</h2>
+                        <p>Feedbacks from clients are very important to us.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="testi_slider owl-carousel">
+                    {% if cl%}
+                    {% for cls in cl %}
+                    <div class="testi_item">
+                        <div class="row">
+                            <!-- <div class="col-lg-4">
+                    						<img src="{{ cls.cl_img.url }}" alt="">
+            							</div> -->
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+            
+                                    <h4>{{ cls.cl_name }}</h4>
+                                    <p>{{ cls.cl_comment }}</p>
+            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================ End Testimonial Area =================-->
+    
+    {% endblock %}
